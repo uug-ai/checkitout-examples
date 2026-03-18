@@ -1,0 +1,299 @@
+/* =============================================
+   Wilde Westen — Music Venue Site
+   ============================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.ww {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  min-height: 100vh;
+}
+
+/* ── Nav ─────────────────────────────────────── */
+.ww-nav {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  height: 72px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid transparent;
+}
+
+.ww-nav-logo {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  color: #111;
+  text-decoration: none;
+  flex-shrink: 0;
+  /* Approximate the stacked ww letterform */
+  display: flex;
+  flex-direction: column;
+  gap: -2px;
+}
+
+.ww-nav-logo span {
+  display: block;
+  line-height: 0.85;
+}
+
+.ww-nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0 auto;
+}
+
+.ww-nav-links a {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #111;
+  transition: opacity 0.15s;
+}
+
+.ww-nav-links a:hover { opacity: 0.5; }
+
+.ww-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.ww-nav-lang {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #111;
+}
+
+.ww-nav-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #111;
+  display: flex;
+  align-items: center;
+}
+
+.ww-nav-icon svg { width: 20px; height: 20px; }
+
+/* ── Hero ────────────────────────────────────── */
+.ww-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.ww-hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  opacity: 0.85;
+}
+
+/* Placeholder gradient when no real image */
+.ww-hero-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2a2a2a 0%, #555 50%, #2a2a2a 100%);
+}
+
+.ww-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.6rem;
+}
+
+.ww-hero-meta {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.04em;
+}
+
+.ww-hero-title {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.ww-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #d4f000;
+  color: #111;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.ww-hero-cta:hover { opacity: 0.85; }
+
+/* ── Section headings ───────────────────────── */
+.ww-section {
+  padding: 2.5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ww-section-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Event card grid ────────────────────────── */
+.ww-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+@media (max-width: 900px) {
+  .ww-card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 540px) {
+  .ww-card-grid { grid-template-columns: 1fr; }
+}
+
+.ww-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #111;
+  transition: opacity 0.15s;
+  cursor: pointer;
+}
+
+.ww-card:hover { opacity: 0.88; }
+
+.ww-card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: grayscale(100%);
+  display: block;
+}
+
+/* Placeholder image block */
+.ww-card-img-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.ww-card-img-placeholder svg {
+  width: 60%;
+  height: 60%;
+  opacity: 0.18;
+}
+
+/* Poster-style card (like Girls Go Wild) */
+.ww-card-img-placeholder.poster {
+  background: #a8d8f0;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ww-card-poster-text {
+  font-size: clamp(1.4rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: #e83ec6;
+  text-align: center;
+  line-height: 0.95;
+  padding: 0.5rem;
+  font-style: italic;
+}
+
+.ww-card-body {
+  padding: 0.85rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+/* Accent colour variants for card bodies */
+.ww-card-body.blue   { background: #4a6cf7; color: #fff; }
+.ww-card-body.lime   { background: #d4f000; color: #111; }
+.ww-card-body.black  { background: #111;    color: #fff; }
+.ww-card-body.pink   { background: #e83ec6; color: #fff; }
+.ww-card-body.yellow { background: #f5c400; color: #111; }
+.ww-card-body.red    { background: #e63030; color: #fff; }
+
+.ww-card-date {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+
+.ww-card-body.blue   .ww-card-date,
+.ww-card-body.black  .ww-card-date,
+.ww-card-body.pink   .ww-card-date { background: rgba(255,255,255,0.2); }
+
+.ww-card-body.lime   .ww-card-date,
+.ww-card-body.yellow .ww-card-date { background: rgba(0,0,0,0.2); color: #111; }
+
+.ww-card-name {
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.ww-card-tickets {
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: auto;
+  padding-top: 0.4rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

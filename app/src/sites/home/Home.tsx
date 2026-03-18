@@ -14,6 +14,12 @@ const sites = [
     description: 'A bright, colourful SaaS product page with features and pricing.',
     palette: ['#6c63ff', '#e040fb', '#f5f3ff'],
   },
+  {
+    path: '/wilde-westen',
+    title: 'Wilde Westen',
+    description: 'A music venue site with event listings and detail pages — inspired by wildewesten.be.',
+    palette: ['#111111', '#d4f000', '#e83ec6'],
+  },
 ]
 
 export default function Home() {

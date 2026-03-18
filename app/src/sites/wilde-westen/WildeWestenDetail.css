@@ -1,0 +1,179 @@
+/* =============================================
+   Wilde Westen — Event Detail Page
+   ============================================= */
+
+.ww-detail {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  min-height: 100vh;
+}
+
+/* Reuse same nav — no extra styles needed */
+
+/* ── Detail Hero ─────────────────────────────── */
+.ww-detail-hero {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background: #a8d8f0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ww-detail-hero-poster {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #a8d8f0;
+  overflow: hidden;
+}
+
+.ww-detail-poster-title {
+  font-size: clamp(4rem, 14vw, 13rem);
+  font-weight: 900;
+  color: #e83ec6;
+  text-align: center;
+  line-height: 0.88;
+  font-style: italic;
+  padding: 1rem;
+  user-select: none;
+}
+
+/* ── Detail body ─────────────────────────────── */
+.ww-detail-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 780px) {
+  .ww-detail-body { grid-template-columns: 1fr; }
+}
+
+.ww-detail-main h1 {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.ww-detail-date-badge {
+  display: inline-block;
+  background: #e83ec6;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.04em;
+}
+
+.ww-detail-subtitle {
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.ww-detail-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  max-width: 560px;
+}
+
+/* ── Sidebar ─────────────────────────────────── */
+.ww-detail-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: sticky;
+  top: 80px;
+}
+
+.ww-detail-ticket-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 1.1rem 1.25rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  letter-spacing: 0.02em;
+  transition: background 0.15s;
+}
+
+.ww-detail-ticket-btn:hover { background: #333; }
+
+.ww-detail-ticket-btn svg { width: 18px; height: 18px; }
+
+.ww-detail-pricing {
+  background: #e83ec6;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ww-detail-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  font-size: 0.85rem;
+  color: #111;
+}
+
+.ww-detail-price-row:last-child { border-bottom: none; }
+
+.ww-detail-price-label { font-weight: 500; }
+.ww-detail-price-amount { font-weight: 700; }
+
+.ww-detail-price-note {
+  font-size: 0.75rem;
+  color: rgba(0,0,0,0.6);
+  padding-top: 0.5rem;
+  font-style: italic;
+}
+
+/* ── Location row ─────────────────────────────── */
+.ww-detail-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 1px solid #e8e8e8;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.ww-detail-info-row strong {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
+
+.ww-detail-info-row a {
+  color: #111;
+  font-weight: 600;
+  text-decoration: underline;
+}
