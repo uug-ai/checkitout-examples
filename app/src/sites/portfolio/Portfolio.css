@@ -1,0 +1,151 @@
+/* Portfolio Site — dark, minimal theme */
+.portfolio {
+  min-height: 100vh;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.portfolio-nav .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #a8ff78;
+  letter-spacing: 0.1em;
+}
+
+.portfolio-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-nav a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+
+.portfolio-nav a:hover {
+  color: #a8ff78;
+}
+
+.portfolio-hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 3rem;
+  max-width: 900px;
+}
+
+.portfolio-hero .eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a8ff78;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  color: #ffffff;
+}
+
+.portfolio-hero h1 span {
+  color: #a8ff78;
+}
+
+.portfolio-hero p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #999;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+}
+
+.portfolio-cta {
+  display: inline-block;
+  border: 1px solid #a8ff78;
+  color: #a8ff78;
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  background: transparent;
+}
+
+.portfolio-cta:hover {
+  background: #a8ff78;
+  color: #0d0d0d;
+}
+
+.portfolio-projects {
+  padding: 4rem 3rem;
+  border-top: 1px solid #2a2a2a;
+}
+
+.portfolio-projects h2 {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a8ff78;
+  margin-bottom: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  border: 1px solid #2a2a2a;
+  padding: 1.5rem;
+  transition: border-color 0.2s;
+}
+
+.project-card:hover {
+  border-color: #a8ff78;
+}
+
+.project-card h3 {
+  color: #ffffff;
+  margin: 0 0 0.5rem;
+}
+
+.project-card p {
+  color: #777;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+.project-tag {
+  display: inline-block;
+  background: #1a1a1a;
+  color: #a8ff78;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  margin-right: 0.4rem;
+  border-radius: 2px;
+}

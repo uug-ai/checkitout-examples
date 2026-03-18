@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  background: #f4f4f4;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.home-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 0.75rem;
+}
+
+.home-header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.site-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.site-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e8e8e8;
+  transition: box-shadow 0.2s, transform 0.15s;
+  display: block;
+}
+
+.site-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.site-preview {
+  height: 100px;
+  display: flex;
+}
+
+.swatch {
+  flex: 1;
+}
+
+.site-info {
+  padding: 1.5rem;
+}
+
+.site-info h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 0.4rem;
+}
+
+.site-info p {
+  font-size: 0.95rem;
+  color: #777;
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+
+.site-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6c63ff;
+}
