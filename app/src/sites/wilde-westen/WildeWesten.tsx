@@ -68,7 +68,13 @@ export default function WildeWesten() {
 
       {/* Hero */}
       <div className="ww-hero">
-        <div className="ww-hero-placeholder" />
+        <img
+          className="ww-hero-bg"
+          src="https://www.wildewesten.be/media/cache/resolve/optimized/upload/media/default/ccdf/ac/d10fbfbc773a183664cbcc1448efbcf811ec5a17.jpg"
+          alt=""
+          width="1440"
+          height="960"
+        />
         <div className="ww-hero-overlay">
           <span className="ww-hero-meta">{hero.date} — {hero.venue}</span>
           <h1 className="ww-hero-title">{hero.name}</h1>
