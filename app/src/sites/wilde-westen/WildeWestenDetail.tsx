@@ -69,13 +69,18 @@ export default function WildeWestenDetail() {
 
         {/* Right: ticket sidebar */}
         <div className="ww-detail-sidebar">
-          <a href="#tickets" className="ww-detail-ticket-btn">
+          <button
+            type="button"
+            className="ww-detail-ticket-btn checkout-plugin"
+            data-event-id={event.id}
+            data-event-name={event.name}
+          >
             koop tickets
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
             </svg>
-          </a>
+          </button>
           <div className="ww-detail-pricing">
             {event.prices.map(p => (
               <div className="ww-detail-price-row" key={p.label}>
