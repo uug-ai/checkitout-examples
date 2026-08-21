@@ -6,17 +6,16 @@ The live example integration is in `app/src/sites/wilde-westen/WildeWestenDetail
 
 ## Quick start
 
-Add the widget stylesheet and script once on every page where checkout can be opened. In this repo they are loaded from jsDelivr in `app/index.html`:
+Add the widget stylesheet and script once on every page where checkout can be opened. In this repo they are served from `app/public/assets`:
 
 ```html
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/uug-ai/checkitout-examples@v1.3.3/app/public/assets/checkout-plugin.css"
-/>
-<script
-  src="https://cdn.jsdelivr.net/gh/uug-ai/checkitout-examples@v1.3.3/app/public/assets/checkout-plugin.umd.js"
-  async
-></script>
+<script>
+  window.CheckoutPluginConfig = {
+    apiBaseUrl: 'http://localhost:8000/api'
+  }
+</script>
+<link rel="stylesheet" href="/assets/checkout-plugin.css" />
+<script src="/assets/checkout-plugin.umd.js" defer></script>
 ```
 
 Then add the `checkout-plugin` class to the element that should open the widget:
@@ -39,12 +38,14 @@ Use `data-*` attributes on the trigger element for checkout context. The current
   className="ww-detail-ticket-btn checkout-plugin"
   data-event-id={event.id}
   data-event-name={event.name}
+  data-product-id={event.productId}
 >
   koop tickets
 </button>
 ```
 
-The bundled widget also reads `data-coins-required` when present:
+The bundled widget requires the Urbain product ID and retrieves the current coin
+cost from the Checkitout API:
 
 ```html
 <button
@@ -52,7 +53,7 @@ The bundled widget also reads `data-coins-required` when present:
   class="checkout-plugin"
   data-event-id="jazz-cats"
   data-event-name="Jazz Cats"
-  data-coins-required="25"
+  data-product-id="13"
 >
   Buy tickets
 </button>
@@ -65,7 +66,7 @@ Attribute reference:
 | `class="checkout-plugin"` | Yes | Marks an element as a checkout trigger. |
 | `data-event-id` | Recommended | Your event, product, plan, or item identifier. |
 | `data-event-name` | Recommended | Human-readable name for the item being purchased. |
-| `data-coins-required` | Optional | Numeric coin cost shown by the widget. Defaults to `0` when omitted or invalid. |
+| `data-product-id` | Yes | Numeric Urbain product ID used to retrieve the current coin price. |
 
 ## React integration example
 
@@ -76,7 +77,7 @@ type CheckoutButtonProps = {
   event: {
     id: string
     name: string
-    coinsRequired?: number
+    productId: number
   }
 }
 
@@ -87,7 +88,7 @@ export function CheckoutButton({ event }: CheckoutButtonProps) {
       className="checkout-plugin"
       data-event-id={event.id}
       data-event-name={event.name}
-      data-coins-required={event.coinsRequired}
+      data-product-id={event.productId}
     >
       Buy tickets
     </button>
@@ -107,6 +108,13 @@ npm install
 npm run dev
 ```
 
+The API defaults to `http://localhost:8000/api`. Override it in `app/.env.local`
+when needed:
+
+```sh
+VITE_API_BASE_URL=https://api.example.com/api
+```
+
 Build the app before publishing changes:
 
 ```sh
@@ -114,12 +122,11 @@ cd app
 npm run build
 ```
 
-## Updating the hosted widget version
+## Updating the bundled widget
 
-The CDN URLs in `app/index.html` are pinned to a repository tag:
+Copy a new plugin build into the example before publishing:
 
-```text
-https://cdn.jsdelivr.net/gh/uug-ai/checkitout-examples@v1.3.3/app/public/assets/checkout-plugin.umd.js
+```sh
+cp ../checkitout/checkout-plugin/dist/checkout-plugin.umd.cjs app/public/assets/checkout-plugin.umd.js
+cp ../checkitout/checkout-plugin/dist/checkout-plugin.css app/public/assets/checkout-plugin.css
 ```
-
-When publishing a new widget build, create a new tag and update both the CSS and JavaScript URLs to that tag. Pinning versions prevents unrelated widget changes from changing behavior on existing integrations.
