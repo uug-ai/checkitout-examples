@@ -2,11 +2,11 @@
 
 This app shows how to add the Checkitout checkout widget to an existing site. The widget is distributed as a CSS file plus a UMD JavaScript bundle, so it can be used from plain HTML, React, Vue, server-rendered pages, or any other frontend that can render a button or link.
 
-The live example integration is in `src/sites/wilde-westen/WildeWestenDetail.tsx`.
+The live example integration is in `app/src/sites/wilde-westen/WildeWestenDetail.tsx`.
 
 ## Quick start
 
-Add the widget stylesheet and script once on every page where checkout can be opened. In this repo they are loaded from jsDelivr in `index.html`:
+Add the widget stylesheet and script once on every page where checkout can be opened. In this repo they are loaded from jsDelivr in `app/index.html`:
 
 ```html
 <link
@@ -102,6 +102,7 @@ Because the widget uses delegated click handling, you do not need a React effect
 Install dependencies and run the example app:
 
 ```sh
+cd app
 npm install
 npm run dev
 ```
@@ -109,12 +110,13 @@ npm run dev
 Build the app before publishing changes:
 
 ```sh
+cd app
 npm run build
 ```
 
 ## Updating the hosted widget version
 
-The CDN URLs in `index.html` are pinned to a repository tag:
+The CDN URLs in `app/index.html` are pinned to a repository tag:
 
 ```text
 https://cdn.jsdelivr.net/gh/uug-ai/checkitout-examples@v1.3.3/app/public/assets/checkout-plugin.umd.js
