@@ -9,14 +9,11 @@ The live example integration is in `app/src/sites/wilde-westen/WildeWestenDetail
 Add the widget stylesheet and script once on every page where checkout can be opened. In this repo they are served from `app/public/assets`:
 
 ```html
-<script>
-  window.CheckoutPluginConfig = {
-    apiBaseUrl: 'http://localhost:8000/api'
-  }
-</script>
 <link rel="stylesheet" href="/assets/checkout-plugin.css" />
 <script src="/assets/checkout-plugin.umd.js" defer></script>
 ```
+
+The widget uses its built-in API configuration, so no API URL setup is needed.
 
 Then add the `checkout-plugin` class to the element that should open the widget:
 
@@ -106,13 +103,6 @@ Install dependencies and run the example app:
 cd app
 npm install
 npm run dev
-```
-
-The API defaults to `http://localhost:8000/api`. Override it in `app/.env.local`
-when needed:
-
-```sh
-VITE_API_BASE_URL=https://api.example.com/api
 ```
 
 Build the app before publishing changes:
