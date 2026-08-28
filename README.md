@@ -36,6 +36,7 @@ Use `data-*` attributes on the trigger element for checkout context. The current
   data-event-id={event.id}
   data-event-name={event.name}
   data-product-id={event.productId}
+  data-api-key={event.apikey}
 >
   koop tickets
 </button>
@@ -51,6 +52,7 @@ cost from the Checkitout API:
   data-event-id="jazz-cats"
   data-event-name="Jazz Cats"
   data-product-id="13"
+  data-api-key="YpH47AmJvTXkCRw61ZE9nbuMFqdoLBspVKi2UgxO"
 >
   Buy tickets
 </button>
