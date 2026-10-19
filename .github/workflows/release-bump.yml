@@ -1,0 +1,27 @@
+name: Bump release
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: Which part of the version to bump
+        required: true
+        type: choice
+        default: patch
+        options:
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-bump
+  cancel-in-progress: false
+
+jobs:
+  bump-release:
+    uses: uug-ai/workflows/.github/workflows/release-bump.yml@main
+    with:
+      bump: ${{ inputs.bump }}

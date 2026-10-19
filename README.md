@@ -1,5 +1,16 @@
 # Checkitout Widget Examples
 
+## Bumping releases
+
+Run **Actions > Bump release > Run workflow** and choose `patch` (default),
+`minor`, or `major`. The workflow calls
+`uug-ai/workflows/.github/workflows/release-bump.yml@main` to create the next
+version tag and GitHub release with generated notes. Concurrent bumps are
+serialized. It does not update package versions.
+
+The shared workflow uses `GITHUB_TOKEN`, so the resulting release does not
+trigger the existing release-container workflow automatically.
+
 This app shows how to add the Checkitout checkout widget to an existing site. The widget is distributed as a CSS file plus a UMD JavaScript bundle, so it can be used from plain HTML, React, Vue, server-rendered pages, or any other frontend that can render a button or link.
 
 The live example integration is in `app/src/sites/wilde-westen/WildeWestenDetail.tsx`.
