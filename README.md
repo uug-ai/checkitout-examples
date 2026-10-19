@@ -66,6 +66,11 @@ Attribute reference:
 | `data-event-id` | Recommended | Your event, product, plan, or item identifier. |
 | `data-event-name` | Recommended | Human-readable name for the item being purchased. |
 | `data-product-id` | Yes | Numeric Urbain product ID used to retrieve the current coin price. |
+| `data-api-key` | No | Urbain integration key for the product. Sent to CheckItOut API as `X-API-Key`; omitted keys use the API's existing default. |
+
+The widget and API must both support `X-API-Key`; deploy the updated API and
+widget bundle together. Keys in HTML are visible to visitors, so only use keys
+intended for public widget integrations.
 
 ## React integration example
 
@@ -98,6 +103,13 @@ export function CheckoutButton({ event }: CheckoutButtonProps) {
 Because the widget uses delegated click handling, you do not need a React effect for buttons that mount after the script loads.
 
 ## Local development
+
+Copy `app/.env.example` to `app/.env.local` and set `VITE_URBAIN_API_KEY` to
+your public Urbain integration key. Ticket buttons expose this value through
+`data-api-key`, which the widget sends to CheckItOut API as `X-API-Key`.
+The local file is Git-ignored, but the key is visible to visitors. Never use
+Azure OpenAI keys or private credentials here. Restart Vite after environment
+changes, and set the variable before building for deployment.
 
 Install dependencies and run the example app:
 

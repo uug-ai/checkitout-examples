@@ -1,7 +1,7 @@
 export const events = [
   {
     id: 'jazz-cats',
-    productId: 13,
+    productId: 16,
     date: '28 maart \'26',
     slug: '28.03.26',
     name: 'Jazz Cats Festival',
@@ -37,7 +37,7 @@ export const events = [
   },
   {
     id: 'terry-riley',
-    productId: 13,
+    productId: 16,
     date: '28.06.26',
     slug: '28.06.26',
     name: 'Terry Riley: In C / G.A.M.E. & Ensemble 0',
@@ -71,7 +71,7 @@ export const events = [
   },
   {
     id: 'girls-go-wild',
-    productId: 13,
+    productId: 16,
     date: '24.04.26',
     slug: '24.04.26',
     name: 'Girls Go Wild: Rosie Stuart + TJE + Toya K',
